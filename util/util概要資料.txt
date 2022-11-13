@@ -1,0 +1,87 @@
+
+戻り値 = 関数名(引数)
+
+load系
+	ok hogeS  = loadTextAsStr(path, enc)
+	ok hogeL  = loadTextAsL(path, enc)
+	ok hogeLL = loadCsvAsLL(path, enc)
+	ok hogeDf = loadCsvAsDataFrame(path, enc)
+	ok hogeD  = loadJsonAsDict(path, enc)
+	ok hogeO  = loadPickleAsObject(path)
+
+save系
+	ok pathS = saveStrAsText(string, path, enc)
+	ok pathS = saveLAsText(L, path, separator, enc)
+	ok pathS = saveLLAsCsv(LL, path, enc)
+	ok pathS = saveDataFrameAsCsv(df, path, enc, header, index)
+	ok pathS = saveDictAsJson(dic, path, indent, enc)
+	ok pathS = saveObjectAsPickle(obj, path)
+
+path系
+	ok pathS = selectFile(path)
+	ok pathL = selectFiles(path)
+	ok pathS = selectDirectory(path)
+	NG pathL = selectDirectories(path)
+	ok pathL = getAllItemPathL(path, recursive)
+	ok pathL = getItemPathLWithRegEx(path, regex, recursive)
+	ok pathS = getThisFileDirectory()
+	ok pathS = getAbsolutePath(path)
+	ok bool  = qExists(path)
+	ok bool  = qFilePath(path)
+	ok bool  = qDirectoryPath(path)
+	ok pathS = makeDirectories(path, exist_ok)
+	ok pathS = deleteItem(path)
+	ok pathL = copyItem(src_path, dst_path)
+	ok pathL = moveItem(src_path, dst_path)
+	ok pathL = renameItem(src_path, new_name)
+
+str系
+	ok pathS = normalizePath(path, oldSeparator="\\", newSeparator="/") #「\」→「/」、「/xxx/」→「/xxx」
+	ok pathS = getParentPath(path)
+	ok nameS = getItemName(path, ext)
+	ok extS  = getFileExtension(path)
+	ok urlL  = getURLLFromStr(string)
+	ok hogeS = getDateAsStr(separator)
+	ok hogeS = getTimeAsStr(separator1, separator2)
+	ok hogeS = getDateTimeAsStr(separator1, separator2, separator3, separator4)
+
+list系
+	ok hogeL  = sortL(LL, reverse)
+	ok hogeLL = sortLLByIndex(LL, index, reverse)
+	ok hogeL  = uniquelizeL(L)
+	ok bool   = qDuplicatesInL(L)
+	ok hogeLx = flattenLx(Lx)
+	ok hogeLL = convertDictIntoLL(Dic)
+	ok hogeD  = convertLLIntoDict(LL)
+	ok hogeD  = countElementsAsD(L)
+	ok hogeLL = countElementsAsLL(L, reverse)
+	   hogeLL = deleteLLColumn(LL, idxI)
+
+Excel系
+	
+
+web系
+	ok hogeS = getHTML(url, isrendered)
+
+その他
+	obj2, obj1 = swapObjects(obj1, obj2)
+	cmdL = runCommands(cmdL)
+
+
+pyautogui系
+	getPositionXY(maxretry, wait, grid)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
